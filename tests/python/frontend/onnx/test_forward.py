@@ -79,10 +79,6 @@ def get_tvm_output(
     opt_level=1,
 ):
     """Generic function to execute and get tvm output"""
-    # TODO: Resolve the issues and remove the following lines
-    target = "llvm"
-    device = tvm.cpu(0)
-
     input_names, shape_dict = get_input_data_shape_dict(graph_def, input_data)
 
     mod, params = relay.frontend.from_onnx(graph_def, shape_dict, opset=opset)
